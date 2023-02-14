@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,6 +12,11 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %> 
+      <p style="color: green"> Notice:
+        <%= msg %> 
+      </p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
