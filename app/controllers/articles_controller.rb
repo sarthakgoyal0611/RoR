@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
   def create
    # puts "======================="
     @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.user = User.first
     puts  @article.errors.any?
     if @article.save
       flash[:notice] = "Article was Created Succesfully"
